@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+<body>
+    
+    <form >
+        <button type="submit" formaction="http://127.0.0.1:5000/index">
+            Home
+        </button>
+    </form>
+
+<center>
+<h2>List of Folder</h2>
+</center>
+
+<table>
+  
+     
+   
+     
+            {%for value in l%}
+                <tr>
+                    <td>{{value}}</td>
+                </tr>
+            {% endfor %}
+       
+     
+    
+
+</table>
+
+
+</body>
+</html>

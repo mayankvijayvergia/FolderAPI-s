@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<body>
+    <form >
+        <button type="submit" formaction="http://127.0.0.1:5000/index">
+            Home
+        </button>
+        </form>
+
+    
+
+    <h1>Select Folder</h1>
+
+<form action="http://127.0.0.1:5000/uploaded" method="POST" enctype="multipart/form-data">
+    
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+         <ul class=flashes>
+            {% for message in messages %} 
+                <h>{{ message }}</h>
+            {% endfor %} 
+          </ul>   
+        {% endif %} 
+    {% endwith %}   
+    
+
+    <select id="Folder" name="Folder">
+        {% for folder in folderlist %}
+          <option value="{{folder}}"SELECTED>{{folder}}</option>
+        {% endfor %}
+        </select> 
+    
+    
+    <input type="file"  name="file" accept=".jpg, .pdf, .txt,.csv, .xlsx, .docx, .pptx" multiple>
+    <input type="submit" value="send" >
+
+
+</form>
+</body>
+</html>
